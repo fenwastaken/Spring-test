@@ -6,23 +6,30 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import bean.HelloPoec;
 import bean.HelloWorld;
+import bean.TextEditor;
 
 public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+//
 //		HelloWorld objA = (HelloWorld)context.getBean("helloWorld");
 //		objA.sayMessage1();
 //		objA.sayMessage2();
-
-		HelloPoec objB = (HelloPoec)context.getBean("helloPoec");
-		objB.sayMessage1();
-		objB.sayMessage2();
-		objB.sayMessage3();
-		
-		((AbstractApplicationContext) context).registerShutdownHook();
+//
+//		HelloPoec objB = (HelloPoec)context.getBean("helloPoec");
+//		objB.sayMessage1();
+//		objB.sayMessage2();
+//		objB.sayMessage3();
+//		
+//		((AbstractApplicationContext) context).registerShutdownHook();
+//	}
+	
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		TextEditor te = (TextEditor)context.getBean("textEditor");
+		te.spellChecker();
 	}
 
 }
