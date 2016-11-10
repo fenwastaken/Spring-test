@@ -1,9 +1,10 @@
 package bean;
 
-public class HelloWorld {
+public class HelloPoec {
 
 	private String message1;
 	private String message2;
+	private String message3;
 	
 	public String getMessage1() {
 		return message1;
@@ -21,12 +22,24 @@ public class HelloWorld {
 		this.message2 = message2;
 	}
 
+	public String getMessage3() {
+		return message3;
+	}
+	
+	public void setMessage3(String message3) {
+		this.message3 = message3;
+	}
+	
 	public void sayMessage1(){
 		System.out.println("Votre message 1 : " + this.getMessage1());
 	}
 	
 	public void sayMessage2(){
 		System.out.println("Votre message 2 : " + this.getMessage2());
+	}
+	
+	public void sayMessage3(){
+		System.out.println("Votre message 3 : " + this.getMessage3());
 	}
 	
 	public void init(){

@@ -4,8 +4,22 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-	<bean id="helloWorld" class="bean.HelloWorld" scope="singleton">
-		<property name="message" value="Hello M2i" />
+<!-- 	<bean id="helloWorld" class="bean.HelloWorld" init-method="init"
+	destroy-method="destroy">
+		<property name="message1" value="Hello M2i" />
+		<property name="message2" value="Hello M2i pour la seconde fois" />
+	</bean> -->
+	
+	<bean id="beanTemplate" abstract="true">
+		<property name="message1" value="Hello M2i" />
+		<property name="message2" value="Hello M2i encore" />
+		<property name="message3" value="Hello M2i encore encore" />
+	</bean>
+	
+	<bean id="helloPoec" class="bean.HelloPoec" init-method="init" parent="beanTemplate"
+	destroy-method="destroy">
+		<property name="message1" value="Hello Julien" />
+		<property name="message3" value="Faiz sucks" />
 	</bean>
 
 </beans>
